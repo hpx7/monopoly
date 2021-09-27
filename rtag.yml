@@ -1,0 +1,46 @@
+types:
+  Username: string
+  PropertyTile:
+    name: string
+    rent: number
+    price: number
+    color: string
+    owner?: Username
+  Player:
+    name: Username
+    money: number
+    position: number
+  Roll:
+    roll1: number
+    roll2: number
+  TurnStatus:
+    - LOBBY
+    - WAITING_FOR_ROLL
+  PlayerState:
+    players: Player[]
+    turn: Username
+    status: TurnStatus
+    roll?: Roll
+    board: PropertyTile[]
+  TradeOffer:
+    property: string
+
+methods:
+  createGame:
+  joinGame:
+  startGame:
+  rollDice:
+  buyProperty:
+  endTurn:
+  proposeTrade:
+    to: Username
+    myOffer: TradeOffer
+    inReturn: TradeOffer
+
+auth:
+  anonymous:
+    separator: "-"
+
+userState: PlayerState
+initialize: createGame
+error: string
