@@ -2,17 +2,17 @@ types:
   Username: string
   PropertyTile:
     name: string
-    rent: number
-    price: number
+    rent: int
+    price: int
     color: string
-    owner?: Username
+    owner: Username?
   Player:
     name: Username
-    money: number
-    position: number
+    money: int
+    position: int
   Roll:
-    roll1: number
-    roll2: number
+    roll1: int
+    roll2: int
   TurnStatus:
     - LOBBY
     - WAITING_FOR_ROLL
@@ -20,7 +20,7 @@ types:
     players: Player[]
     turn: Username
     status: TurnStatus
-    roll?: Roll
+    roll: Roll?
     board: PropertyTile[]
   TradeOffer:
     property: string
@@ -32,10 +32,6 @@ methods:
   rollDice:
   buyProperty:
   endTurn:
-  proposeTrade:
-    to: Username
-    myOffer: TradeOffer
-    inReturn: TradeOffer
 
 auth:
   anonymous:

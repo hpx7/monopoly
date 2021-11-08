@@ -8,7 +8,6 @@ import {
   IRollDiceRequest,
   IBuyPropertyRequest,
   IEndTurnRequest,
-  IProposeTradeRequest,
   TurnStatus,
   PropertyTile,
 } from "./.rtag/types";
@@ -80,9 +79,6 @@ export class Impl implements Methods<PlayerState> {
     state.turn = state.players[(playerIdx + 1) % state.players.length].name;
     state.roll = undefined;
     return Response.ok();
-  }
-  proposeTrade(state: PlayerState, user: UserData, ctx: Context, request: IProposeTradeRequest): Response {
-    return Response.error("Not implemented");
   }
   getUserState(state: PlayerState, user: UserData): PlayerState {
     return state;
